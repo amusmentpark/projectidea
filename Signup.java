@@ -329,7 +329,7 @@ int rows=stmt.executeUpdate(query);
 JOptionPane.showMessageDialog(null,"Now you are a part of G-Force Family!");
 new Login().setVisible(true);
 stmt.close();
-con.close();
+con.close();// connection closed 
 }
 catch (Exception e)
 {
