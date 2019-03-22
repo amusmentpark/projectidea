@@ -35,16 +35,12 @@ public class booking1 extends javax.swing.JFrame {
         rbrush = new javax.swing.JRadioButton();
         rbplay = new javax.swing.JRadioButton();
         jButton2 = new javax.swing.JButton();
-        combo = new javax.swing.JComboBox<String>();
-        jLabel3 = new javax.swing.JLabel();
         minorlbl = new javax.swing.JLabel();
         majorlbl = new javax.swing.JLabel();
         srlbl = new javax.swing.JLabel();
         minortxt = new javax.swing.JTextField();
         majortxt = new javax.swing.JTextField();
         srtxt = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        pack = new javax.swing.JComboBox<String>();
         jPanel1 = new javax.swing.JPanel();
         option1 = new javax.swing.JCheckBox();
         option2 = new javax.swing.JCheckBox();
@@ -52,9 +48,9 @@ public class booking1 extends javax.swing.JFrame {
         option4 = new javax.swing.JCheckBox();
         userlb1 = new javax.swing.JLabel();
         userlb = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        minorprice = new javax.swing.JLabel();
+        majorprice = new javax.swing.JLabel();
+        srprice = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -62,6 +58,7 @@ public class booking1 extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        totalprice = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu6 = new javax.swing.JMenu();
@@ -91,7 +88,7 @@ public class booking1 extends javax.swing.JFrame {
                 rbmovingActionPerformed(evt);
             }
         });
-        getContentPane().add(rbmoving, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 90, -1, 40));
+        getContentPane().add(rbmoving, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, -1, 40));
 
         buttonGroup1.add(rbrush);
         rbrush.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
@@ -103,7 +100,7 @@ public class booking1 extends javax.swing.JFrame {
                 rbrushActionPerformed(evt);
             }
         });
-        getContentPane().add(rbrush, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, -1, 40));
+        getContentPane().add(rbrush, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, -1, 40));
 
         buttonGroup1.add(rbplay);
         rbplay.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
@@ -115,74 +112,47 @@ public class booking1 extends javax.swing.JFrame {
                 rbplayActionPerformed(evt);
             }
         });
-        getContentPane().add(rbplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, -1, 40));
+        getContentPane().add(rbplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, -1, 40));
 
         jButton2.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(102, 102, 0));
         jButton2.setText("Add to cart");
-        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, new java.awt.Color(0, 204, 204), new java.awt.Color(204, 204, 204), new java.awt.Color(0, 204, 204), new java.awt.Color(0, 204, 204)));
+        jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 370, 160, 50));
-
-        combo.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        combo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Any One", "Family Combo", "College Days", "Stop Waiting" }));
-        combo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboActionPerformed(evt);
-            }
-        });
-        getContentPane().add(combo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 170, 50));
-
-        jLabel3.setFont(new java.awt.Font("Ebrima", 1, 16)); // NOI18N
-        jLabel3.setText("Choose Package Type");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 190, 30));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 320, 160, 50));
 
         minorlbl.setFont(new java.awt.Font("Poor Richard", 1, 14)); // NOI18N
         minorlbl.setForeground(new java.awt.Color(255, 255, 255));
         minorlbl.setText("Number Of Members (below 15)");
-        getContentPane().add(minorlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, -1, 30));
+        getContentPane().add(minorlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, -1, 30));
 
         majorlbl.setFont(new java.awt.Font("Poor Richard", 1, 14)); // NOI18N
         majorlbl.setForeground(new java.awt.Color(255, 255, 255));
         majorlbl.setText("Number Of Members (Above 18 Below 50)");
-        getContentPane().add(majorlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, -1, 30));
+        getContentPane().add(majorlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, -1, 30));
 
         srlbl.setFont(new java.awt.Font("Poor Richard", 1, 14)); // NOI18N
         srlbl.setForeground(new java.awt.Color(255, 255, 255));
         srlbl.setText("Number Of Members (Above 50)");
-        getContentPane().add(srlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, -1, 30));
+        getContentPane().add(srlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, -1, 30));
 
         minortxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 minortxtActionPerformed(evt);
             }
         });
-        getContentPane().add(minortxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 290, 60, -1));
-        getContentPane().add(majortxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 320, 60, -1));
+        getContentPane().add(minortxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, 60, -1));
+        getContentPane().add(majortxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 330, 60, -1));
 
         srtxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 srtxtActionPerformed(evt);
             }
         });
-        getContentPane().add(srtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 60, -1));
-
-        jLabel6.setFont(new java.awt.Font("Ebrima", 1, 16)); // NOI18N
-        jLabel6.setText("Select A Combo Plan");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
-
-        pack.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        pack.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Any One", "Customised Package", "Combo Packages" }));
-        pack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                packActionPerformed(evt);
-            }
-        });
-        getContentPane().add(pack, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 170, 50));
+        getContentPane().add(srtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 360, 60, -1));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Select An Option", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Berlin Sans FB", 0, 18), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -204,42 +174,90 @@ public class booking1 extends javax.swing.JFrame {
         option4.setOpaque(false);
         jPanel1.add(option4);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, 460, 140));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 460, 140));
 
         userlb1.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(userlb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 130, 20));
 
         userlb.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(userlb, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, 70, 20));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 290, 50, 20));
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 320, 50, 20));
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 350, 50, 20));
+
+        minorprice.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        minorprice.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(minorprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 300, 50, 20));
+
+        majorprice.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        majorprice.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(majorprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 330, 50, 20));
+
+        srprice.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        srprice.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(srprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 360, 50, 20));
 
         jButton1.setText("+");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 350, -1, -1));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 360, -1, -1));
 
         jButton3.setText("-");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, -1, -1));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 300, -1, -1));
 
         jButton4.setText("-");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, -1, -1));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, -1, -1));
 
         jButton5.setText("-");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, -1, -1));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, -1, -1));
 
         jButton6.setText("+");
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 290, -1, -1));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 300, -1, -1));
 
         jButton7.setText("+");
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 320, -1, -1));
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 330, -1, -1));
 
         jButton8.setText("Generate invoice");
         jButton8.setToolTipText("");
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 320, 160, 40));
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 380, 160, 40));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/theme.jpg"))); // NOI18N
+        totalprice.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        totalprice.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(totalprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 260, 60, 20));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Project/theme.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 430));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 430));
 
         jMenu6.setText("<");
         jMenu6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -316,20 +334,40 @@ public class booking1 extends javax.swing.JFrame {
     
     private void rbmovingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbmovingActionPerformed
         // TODO add your handling code here:
+        option1.setSelected(true);
+        option2.setSelected(true);
         option1.setText("Water Wars");
         option2.setText("Lazy Rivers");
         option3.setVisible(false);
         option4.setVisible(false);
+        minortxt.setText("1");
+        majortxt.setText("1");
+        srtxt.setText("1");
+        minorprice.setText("120");
+        majorprice.setText("150");
+        srprice.setText("100");
+
     }//GEN-LAST:event_rbmovingActionPerformed
 
     private void rbrushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbrushActionPerformed
         // TODO add your handling code here:
         option3.setVisible(true);
         option4.setVisible(true);
+        option1.setSelected(true);
+        option2.setSelected(true);
+        option3.setSelected(true);
+        option4.setSelected(true);
         option1.setText("The Trechter");
         option2.setText("Water@Speed");
         option3.setText("Xtrem");
         option4.setText("Flying Fish");
+        minortxt.setText("1");
+        majortxt.setText("1");
+        srtxt.setText("1");
+        minorprice.setText("500");
+        majorprice.setText("750");
+        srprice.setText("250");
+
     }//GEN-LAST:event_rbrushActionPerformed
 
     private void rbplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbplayActionPerformed
@@ -347,14 +385,107 @@ public class booking1 extends javax.swing.JFrame {
         minortxt.setText("1");
         majortxt.setText("1");
         srtxt.setText("1");
-        //minorprice.setText("750");
-        //majorprice.setText("1000");
-        //srprice.setText("500");
+        minorprice.setText("750");
+        majorprice.setText("1000");
+        srprice.setText("500");
+
    
     }//GEN-LAST:event_rbplayActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 //new Billing().setVisible(true);        // TODO add your handling code here:
+        String userid=userlb.getText();
+        if(rbplay.isSelected())
+        {    String op1="Not opted",op2="Not opted",op3="Not opted",op4="Not opted";
+            if(option1.isSelected()==true)
+            op1="LAF-Load Aim Fire";
+            if(option2.isSelected()==true)
+            op2="Pendulum_Tornedo";
+            if(option3.isSelected()==true)
+            op3="BumpIt Boats";
+            if(option4.isSelected()==true)
+            op4="Move It";
+            int mi=Integer.parseInt(minortxt.getText());
+            int ma=Integer.parseInt(majortxt.getText());
+            int sr=Integer.parseInt(srtxt.getText());
+            int miprice=Integer.parseInt(minorprice.getText());
+            int maprice=Integer.parseInt(majorprice.getText());
+            int sprice=Integer.parseInt(srprice.getText());
+            int amount=maprice+miprice+sprice;
+            totalprice.setText(""+amount);            
+            int totpayable=Integer.parseInt(totalprice.getText());
+                
+            try{
+                Class.forName("java.sql.Driver");
+                Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/project","chinmay","chinmay99");
+                Statement stmt=con.createStatement();
+                String query="insert into youngplay values('"+op1+"','"+op2+"','"+op3+"','"+op4+"',"+mi+","+ma+","+sr+","
+                        +miprice+","+maprice+","+sprice+","+totpayable+",'"+userid+"');";
+                int rows=stmt.executeUpdate(query); 
+                
+            }
+            catch(Exception e){JOptionPane.showMessageDialog(null,"ERROR");} }
+        
+            else if(rbrush.isSelected())
+        {
+            String op1="Not opted",op2="Not opted",op3="Not opted",op4="Not opted";
+            if(option1.isSelected()==true)
+            op1="The Trechter";
+            if(option2.isSelected()==true)
+            op2="Water@Speed";
+            if(option3.isSelected()==true)
+            op3="Xtrem";
+            if(option4.isSelected()==true)
+            op4="Flying Fish";
+            int mi=Integer.parseInt(minortxt.getText());
+            int ma=Integer.parseInt(majortxt.getText());
+            int sr=Integer.parseInt(srtxt.getText());
+            int miprice=Integer.parseInt(minorprice.getText());
+            int maprice=Integer.parseInt(majorprice.getText());
+            int sprice=Integer.parseInt(srprice.getText());
+            int amount=maprice+miprice+sprice;
+            totalprice.setText(""+amount);            
+            int totpayable=Integer.parseInt(totalprice.getText());
+            try{
+                Class.forName("java.sql.Driver");
+                Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/project","chinmay","chinmay99");
+                Statement stmt=con.createStatement();
+              String query="insert into rush values('"+op1+"','"+op2+"','"+op3+"','"+op4+"',"+mi+","+ma+","+sr+","
+                        +miprice+","+maprice+","+sprice+",'"+userid+"',"+totpayable+");";
+                int rows=stmt.executeUpdate(query);
+            }
+            catch(Exception e){JOptionPane.showMessageDialog(null,"ERROR");}
+        }
+        
+            else if(rbmoving.isSelected())
+        {
+            String op1="Not opted",op2="Not opted";
+            if(option1.isSelected()==true)
+            op1="Water Wars";
+            if(option2.isSelected()==true)
+            op2="Lazy Rivers";
+            int mi=Integer.parseInt(minortxt.getText());
+            int ma=Integer.parseInt(majortxt.getText());
+            int sr=Integer.parseInt(srtxt.getText());
+            int miprice=Integer.parseInt(minorprice.getText());
+            int maprice=Integer.parseInt(majorprice.getText());
+            int sprice=Integer.parseInt(srprice.getText());
+            int amount=maprice+miprice+sprice;
+            totalprice.setText(""+amount);            
+            int totpayable=Integer.parseInt(totalprice.getText());
+            try{
+                Class.forName("java.sql.Driver");
+                Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/project","chinmay","chinmay99");
+                Statement stmt=con.createStatement();
+                String query="insert into moving values('"+op1+"','"+op2+"',"+mi+","+ma+","+sr+","
+                        +miprice+","+maprice+","+sprice+",'"+userid+"',"+totpayable+");";
+                int rows=stmt.executeUpdate(query);
+            }
+            catch(Exception e){JOptionPane.showMessageDialog(null,"ERROR");}
+        }       
+        jButton2.setText("Added to Cart");
+        jButton1.setEnabled(true);  
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void minortxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minortxtActionPerformed
@@ -365,65 +496,9 @@ public class booking1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_srtxtActionPerformed
 
-    private void comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_comboActionPerformed
-
-    private void packActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_packActionPerformed
-        // TODO add your handling code here:
-        String Pack=(String)pack.getSelectedItem();
-        if(Pack.equals("Costomised Package"))
-           // hide.setVisible(true);
-            rbrush.setVisible(true);
-            rbplay.setVisible(true);
-            rbmoving.setVisible(true);
-            jPanel1.setVisible(true);
-            minorlbl.setVisible(true);
-            majorlbl.setVisible(true);
-            srlbl.setVisible(true);
-            minortxt.setVisible(true);
-            majortxt.setVisible(true);
-            srtxt.setVisible(true);
-            jLabel6.setVisible(false);
-            combo.setVisible(false);
-        
-             if (Pack.equals("Combo Packages"))
-             {     // hide.setVisible(true);
-                    rbplay.setVisible(false);
-                    rbrush.setVisible(false);
-                    rbmoving.setVisible(false);
-                    jPanel1.setVisible(false);
-                    minorlbl.setVisible(false);
-                    majorlbl.setVisible(false);
-                    srlbl.setVisible(false);
-                    minortxt.setVisible(false);
-                    majortxt.setVisible(false);
-                    srtxt.setVisible(false);
-                    jLabel6.setVisible(true);
-                    combo.setVisible(true);
-             }  
-            
-    }//GEN-LAST:event_packActionPerformed
-
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
-        rbplay.setVisible(false);
-        rbrush.setVisible(false);
-        rbmoving.setVisible(false);
-        jPanel1.setVisible(false);
-        minorlbl.setVisible(false);
-        majorlbl.setVisible(false);
-        srlbl.setVisible(false);
-        minortxt.setVisible(false);
-        majortxt.setVisible(false);
-        srtxt.setVisible(false);
-        jLabel6.setVisible(false);
-        jButton1.setVisible(false);
-        jButton3.setVisible(false);jButton4.setVisible(false);jButton5.setVisible(false);jButton6.setVisible(false);jButton7.setVisible(false);
-        
-                combo.setVisible(false);
-                jButton2.setEnabled(false);
+        //jButton2.setEnabled(false);
         try{
             Class.forName("java.sql.Driver");
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","chinmay","chinmay99");
@@ -439,10 +514,8 @@ public class booking1 extends javax.swing.JFrame {
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, "error");
-            System.err.println(e);
         }
 
-        
     }//GEN-LAST:event_formWindowActivated
 
     private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MouseClicked
@@ -481,6 +554,147 @@ public class booking1 extends javax.swing.JFrame {
         new Combo().setVisible(true);
     }//GEN-LAST:event_jMenu8MouseClicked
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+int num=Integer.parseInt(minortxt.getText());
+        int i=1;
+        if(num>=i)
+            num--;
+        minortxt.setText(""+num);
+        if(rbplay.isSelected())
+        minorprice.setText(""+(num*750));
+        else if(rbrush.isSelected())
+            minorprice.setText(""+(num*500));
+        else if(rbmoving.isSelected())
+            minorprice.setText(""+(num*125));  
+int miprice=Integer.parseInt(minorprice.getText());
+            int maprice=Integer.parseInt(majorprice.getText());
+            int sprice=Integer.parseInt(srprice.getText());
+            int amount=maprice+miprice+sprice;
+            totalprice.setText(""+amount);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        int num=Integer.parseInt(majortxt.getText());
+       int i=1;
+        if(num>=i)
+        --num;
+       majortxt.setText(""+num);
+       
+        if(rbplay.isSelected())
+        majorprice.setText(""+(num*1000));
+        else if(rbrush.isSelected())
+            majorprice.setText(""+(num*750));
+        else if(rbmoving.isSelected())
+            majorprice.setText(""+(num*150));
+        int miprice=Integer.parseInt(minorprice.getText());
+            int maprice=Integer.parseInt(majorprice.getText());
+            int sprice=Integer.parseInt(srprice.getText());
+            int amount=maprice+miprice+sprice;
+            totalprice.setText(""+amount);
+
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        int num=Integer.parseInt(srtxt.getText());
+        int i=1;
+        if(num>=i)
+        --num;
+        srtxt.setText(""+num);
+        if(rbplay.isSelected())
+        srprice.setText(""+(num*500));
+        else if(rbrush.isSelected())
+            srprice.setText(""+(num*250));
+        else if(rbmoving.isSelected())
+            srprice.setText(""+(num*100));
+int miprice=Integer.parseInt(minorprice.getText());
+            int maprice=Integer.parseInt(majorprice.getText());
+            int sprice=Integer.parseInt(srprice.getText());
+            int amount=maprice+miprice+sprice;
+            totalprice.setText(""+amount);
+
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        int num=Integer.parseInt(minortxt.getText());
+        ++num;
+        minortxt.setText(""+num);
+        if(rbplay.isSelected())
+        minorprice.setText(""+(num*750));
+        else if(rbrush.isSelected())
+            minorprice.setText(""+(num*500));
+        else if(rbmoving.isSelected())
+            minorprice.setText(""+(num*125));
+        int miprice=Integer.parseInt(minorprice.getText());
+            int maprice=Integer.parseInt(majorprice.getText());
+            int sprice=Integer.parseInt(srprice.getText());
+            int amount=maprice+miprice+sprice;
+            totalprice.setText(""+amount);
+
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        int num=Integer.parseInt(majortxt.getText());
+        ++num;
+        majortxt.setText(""+num);        
+        if(rbplay.isSelected())
+        majorprice.setText(""+(num*1000));
+        else if(rbrush.isSelected())
+            majorprice.setText(""+(num*750));
+        else if(rbmoving.isSelected())
+            majorprice.setText(""+(num*150));
+int miprice=Integer.parseInt(minorprice.getText());
+            int maprice=Integer.parseInt(majorprice.getText());
+            int sprice=Integer.parseInt(srprice.getText());
+            int amount=maprice+miprice+sprice;
+            totalprice.setText(""+amount);
+
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        int num=Integer.parseInt(srtxt.getText());
+        ++num;
+        srtxt.setText(""+num);
+        srtxt.setText(""+num);
+        if(rbplay.isSelected())
+        srprice.setText(""+(num*500));
+        else if(rbrush.isSelected())
+            srprice.setText(""+(num*250));
+        else if(rbmoving.isSelected())
+            srprice.setText(""+(num*100)); 
+int miprice=Integer.parseInt(minorprice.getText());
+            int maprice=Integer.parseInt(majorprice.getText());
+            int sprice=Integer.parseInt(srprice.getText());
+            int amount=maprice+miprice+sprice;
+            totalprice.setText(""+amount);
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+         String id=userlb.getText();
+      int amt=Integer.parseInt(totalprice.getText());
+       try{
+            Class.forName("java.sql.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","chinmay","chinmay99");
+            Statement stmt=con.createStatement();
+            String query="update userinfo set payable="+amt+" where userid='"+id+"';";
+            int rows=stmt.executeUpdate(query);
+            
+             
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "error");
+        }
+       new Payment().setVisible(true);
+
+    }//GEN-LAST:event_jButton8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -518,7 +732,6 @@ public class booking1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JComboBox<String> combo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -527,12 +740,7 @@ public class booking1 extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -544,19 +752,22 @@ public class booking1 extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel majorlbl;
+    private javax.swing.JLabel majorprice;
     private javax.swing.JTextField majortxt;
     private javax.swing.JLabel minorlbl;
+    private javax.swing.JLabel minorprice;
     private javax.swing.JTextField minortxt;
     private javax.swing.JCheckBox option1;
     private javax.swing.JCheckBox option2;
     private javax.swing.JCheckBox option3;
     private javax.swing.JCheckBox option4;
-    private javax.swing.JComboBox<String> pack;
     private javax.swing.JRadioButton rbmoving;
     private javax.swing.JRadioButton rbplay;
     private javax.swing.JRadioButton rbrush;
     private javax.swing.JLabel srlbl;
+    private javax.swing.JLabel srprice;
     private javax.swing.JTextField srtxt;
+    private javax.swing.JLabel totalprice;
     private javax.swing.JLabel userlb;
     private javax.swing.JLabel userlb1;
     // End of variables declaration//GEN-END:variables

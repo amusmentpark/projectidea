@@ -44,7 +44,7 @@ public class Booking extends javax.swing.JFrame {
         memtxt = new javax.swing.JTextField();
         amttxt = new javax.swing.JTextField();
         userlb = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu6 = new javax.swing.JMenu();
@@ -67,7 +67,7 @@ public class Booking extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        combox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select any one", "Family Combo", "College Days", "You are the king" }));
+        combox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select any one", "Family Combo", "College Days", "You Are The King" }));
         combox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboxActionPerformed(evt);
@@ -113,6 +113,11 @@ public class Booking extends javax.swing.JFrame {
 
         minus.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         minus.setText("-");
+        minus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                minusActionPerformed(evt);
+            }
+        });
         getContentPane().add(minus, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 180, -1, -1));
 
         plus.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -127,15 +132,15 @@ public class Booking extends javax.swing.JFrame {
         getContentPane().add(amttxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 230, 80, 30));
         getContentPane().add(userlb, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 100, 310, 29));
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton5.setText("Proceed to Payment");
-        jButton5.setToolTipText("");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton2.setText("Proceed to Payment");
+        jButton2.setToolTipText("");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 380, 190, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 380, 190, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/web-banner2.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -216,11 +221,33 @@ public class Booking extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String combo=(String) combox.getSelectedItem();
+        String member=memtxt.getText();
+        int amount=Integer.parseInt(amttxt.getText());
+        String userid=userlb.getText();
+            try{
+            Class.forName("java.sql.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","jarvis");
+            Statement stmt=con.createStatement();
+            String query="insert into combo values('"+combo+"','"+member+"',"+amount+",'"+userid+"');";
+            int rows=stmt.executeUpdate(query);         
+            }        
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "error");
+        }
+        jButton2.setVisible(true);
+
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void plusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusActionPerformed
         // TODO add your handling code here:
+         int num=Integer.parseInt(memtxt.getText());
+        num++;
+        memtxt.setText(""+num);
+        amttxt.setText(""+(5000*num));
+       
+
     }//GEN-LAST:event_plusActionPerformed
 
     private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MouseClicked
@@ -259,9 +286,23 @@ public class Booking extends javax.swing.JFrame {
         new Combo().setVisible(true);
     }//GEN-LAST:event_jMenu8MouseClicked
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+        String id=userlb.getText();
+      int amt=Integer.parseInt(amttxt.getText());
+       try{
+            Class.forName("java.sql.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","jarvis");
+            Statement stmt=con.createStatement();
+            String query="update userinfo set payable="+amt+" where userid='"+id+"';";
+            int rows=stmt.executeUpdate(query); 
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "error");
+        }
+       //new Billing().setVisible(true);
+
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
@@ -278,7 +319,7 @@ public class Booking extends javax.swing.JFrame {
              amttxt.setVisible(false);
              minus.setVisible(false);
              packlb.setVisible(false);
-             jButton5.setVisible(false);
+             jButton2.setVisible(false);
              try{
             Class.forName("java.sql.Driver");
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","chinmay","chinmay99");
@@ -357,11 +398,22 @@ public class Booking extends javax.swing.JFrame {
                 minus.setVisible(true);
                 plus.setVisible(true);
                 memtxt.setText("1");
-                amttxt.setText(""+5000);
+                amttxt.setText("5000");
             
         }
 
     }//GEN-LAST:event_comboxActionPerformed
+
+    private void minusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusActionPerformed
+        // TODO add your handling code here:
+        int num=Integer.parseInt(memtxt.getText());
+        int i=2;
+        if(num>=i)
+            num--;
+        memtxt.setText(""+num);
+        amttxt.setText(""+(5000*num));
+
+    }//GEN-LAST:event_minusActionPerformed
 
     /**
      * @param args the command line arguments
@@ -403,7 +455,7 @@ public class Booking extends javax.swing.JFrame {
     private javax.swing.JTextField amttxt;
     private javax.swing.JComboBox combox;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
